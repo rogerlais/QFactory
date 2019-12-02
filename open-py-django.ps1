@@ -3,6 +3,9 @@ References: https://docs.djangoproject.com/pt-br/2.2/howto/windows/
 #>
 
 
+#!O script como está serve como referencia pra melhoria, visto que não se usar o warapper para windows e poderemoes colocar o venv na mesma pasta do projeto
+
+
 <#
 1 - como administrador instalar o viertualnenv
 	pip install virtualenv
@@ -14,6 +17,10 @@ References: https://docs.djangoproject.com/pt-br/2.2/howto/windows/
 4 - criar o app a partir do template do framwaork apontando para a pasta atual(rootfolder do projeto)
 	django-admin startproject <nome-app> .
 5 - Abrir o script rais managae.py e depura-lo
+
+links uteis:
+https://www.gun.io/blog/setting-up-a-django-project
+
 
 #>
 
