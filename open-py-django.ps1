@@ -25,7 +25,7 @@ https://www.gun.io/blog/setting-up-a-django-project
 #>
 
 #!Obrigatorio no inicio
-param([switch]$NoServer=$true)
+param([switch]$NoServer=$false)
 
 
 function Start-Env( $NoServer ) {
