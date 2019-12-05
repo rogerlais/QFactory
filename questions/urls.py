@@ -1,4 +1,4 @@
-"""qfapp URL Configuration
+"""questions URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -13,10 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include #inserido include para importar toda subarvore de "questions"
+from django.urls import path
+from . import views
 
+#todo inserir as urls a serem tratadas aqui
 urlpatterns = [
-    path('questions/', include('questions.urls')), #insere tratamento do app questions
-    path('admin/', admin.site.urls),
+    path('', views.index, name='index'), #Resolve pelo metodo index de questions.apps
 ]
