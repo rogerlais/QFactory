@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>Projeto - Início</title>
+                <meta charset="utf-8" />
+                <link rel="stylesheet" type="text/css" href="estilo.css" />
+        </head>
+
+        <body>
+                <div id="wrap">
+                        <header>
+                                <p>                 
+                                        <img src="logo_ifpb.png" width="75" alt="Logo da instituição" title="IFPB" ><br>
+                                        <if>INSTITUTO FEDERAL DA PARAÍBA</if><br><br>
+                                        <strong>Disciplina</strong>​: Estrutura de Dados e Programação Orientada a Objetos<br>
+                                        Professora​: Drª Alana Morais<br>
+                                        Curso​: Redes de Computadores<br>
+                                        Alunos: Leonardo e Rogerlais<br>
+                                </p>
+                                <h1>Projeto OO</h1>
+                        </header>                 
+
+                        <login>
+                                <h2>Login</h2>
+                                <label for="usuário">Usuário:</label>
+                                <input id="usuário" type="text" placeholder="Digite seu usuário" name="usuário"/>
+                                <label for="pass">Senha:</label>
+                                <input id="pass" type="password" placeholder="Digite sua senha" name="senha"/>
+                                <input type="submit" value="Sign in" />
+
+                                <p><br></p>
+                        </login>
+
+                        <form action="contato.php" method="post">
+                                <label for="nome">Nome:</label>
+                                <input id="nome" type="text" placeholder="Digite seu nome" name="nome"/>
+                                
+                                <label for="opcao">Você gostou do site:</label>
+                                <input type="radio" name="opcao" value="sim" />Sim
+                                <input type="radio" name="opcao" value="nao" />Não
+                                
+                                <label for="linguagem">Você quer aprender mais sobre:</label>
+                                <input type="checkbox" name="html" />HTML
+                                <input type="checkbox" name="css" />CSS
+                                
+                                <textarea name="msg"></textarea>
+
+                                <input type="submit" value="Enviar" />
+                                
+
+
+
+                        </form>
+
+
+                        <footer>
+                                <br><p>Roda pé</p><br>
+                        </footer>
+
+
+                </div>       
+        </body>       
+</html>
