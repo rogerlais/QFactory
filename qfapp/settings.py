@@ -50,12 +50,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'qfapp.urls'
+#* Desonfio que seja o ponto que determina a aplicação primaria, referenciando o lançador
+ROOT_URLCONF = 'qfapp.urls'  
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ ], #!Adicionar o caminho dos templates
+        'DIRS': [os.path.join(BASE_DIR , '\\questions\\templates') ], #! roger - adicionar o caminho dos templates da app
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#* Roger inserted
+#LOGIN_REDIRECT_URL = '/questions/' #* roger - habilita redireção após login
+#LOGOUT_REDIRECT_URL = '/login/login' #* roger - habilita redireção para novo login
+
+LOGIN_REDIRECT_URL = '/' #* roger - habilita redireção após login
+LOGOUT_REDIRECT_URL = '/' #* roger - habilita redireção para novo login

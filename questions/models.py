@@ -55,3 +55,7 @@ class Choice(models.Model):
         else:
             ret = '[ ]'
         return ret + self.choice_label
+
+class Professor(models.Model):
+    
+    pass 

@@ -1,0 +1,11 @@
+[roger]
+- class model professor - coordinator heritance 
+- view /questions 
+- sub-view mwnu entrance
+
+[leo]
+- template base
+- template login
+- frame up
+- frame left menu
+- template /questions
