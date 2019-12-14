@@ -55,7 +55,7 @@ ROOT_URLCONF = 'qfapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ ], #!Adicionar o caminho dos templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

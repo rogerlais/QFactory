@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include #inserido include para importar toda subarvore de "questions"
 
 urlpatterns = [
-    path('questions/', include('questions.urls')), #insere tratamento do app questions
     path('admin/', admin.site.urls),
+    path('questions/', include('questions.urls')), #insere tratamento do app questions
+    path('', include('questions.urls')), #insere tratamento do app questions TAMBÉM PARA O RAIZ
 ]

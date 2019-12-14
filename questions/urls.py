@@ -18,5 +18,6 @@ from . import views
 
 #todo inserir as urls a serem tratadas aqui
 urlpatterns = [
-    path('', views.index, name='index'), #Resolve pelo metodo index de questions.apps
+    path('questions/', views.index, name='index'), #Resolve pelo metodo index de questions.apps
+    path('', views.login, name='login'), #Resolve pelo metodo index de questions.apps
 ]
