@@ -1,9 +1,23 @@
 <!-- templates/home.html-->
 {% extends 'base.html' %}
 
+
 {% block title %}Home{% endblock %}
 
+
 {% block content %}
+
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Projeto OO!</h1>
+      <p class="lead">Prof.: Drª. Alana.</p>
+      <p>Alunos:</p>
+      <p>Leonardo e Roger</p>
+    </div>
+  </div>
+</div> 
+
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
   <p><a href="{% url 'logout' %}">logout</a></p>
