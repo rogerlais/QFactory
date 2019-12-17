@@ -8,12 +8,16 @@
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
+            //"stopOnEntry": false, //eu
             "program": "${workspaceFolder}\\manage.py",
+            //"console": "integratedTerminal",  //eu
             "args": [
                 "runserver",
-                "--noreload"
+                //"--nothreading",  //eu
+               // "--noreload"
             ],
-            "django": true
+            "django": true,
+            //"subProcess": true  //eu
         }
     ]
 }
