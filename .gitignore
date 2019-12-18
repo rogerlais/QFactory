@@ -2,3 +2,4 @@
 /questions/migrations
 /static
 DB
+/db.sqlite3
