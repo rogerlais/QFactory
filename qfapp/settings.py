@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles', 
     'questions.apps.QuestionsConfig', #Aplicação a ser desenvolvida
 ]
 
@@ -120,6 +120,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+'''
+! - Roger - Nada do abaixo com utilidade pelo momento
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+#STATIC_URL = 'http://%s/static/'  #sem / inicial agora
+STATIC_URL = os.getenv('STATIC_URL', '/static/')
+STATICFILES_STORAGE = 'static/'
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"), ]
+'''
 
 #* Roger inserted
 #LOGIN_REDIRECT_URL = '/questions/' #* roger - habilita redireção após login

@@ -1,7 +1,7 @@
 {
     "python.pythonPath": "djenv\\Scripts\\python.exe",
     "python.testing.pytestArgs": [
-        "qfapp"
+        "questions"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,

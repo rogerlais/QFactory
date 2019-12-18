@@ -14,7 +14,7 @@
             "args": [
                 "runserver",
                 //"--nothreading",  //eu
-               // "--noreload"
+                "--noreload"
             ],
             "django": true,
             //"subProcess": true  //eu

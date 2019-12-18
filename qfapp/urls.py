@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include #inserido include para importar toda subarvore de "questions"
 from django.views.generic.base import TemplateView
+from django.conf.urls.static import static
+from django.conf import settings
 
 '''
 operação de login baseados a partir de: 
@@ -27,4 +29,4 @@ urlpatterns = [
     path('login/', include('django.contrib.auth.urls')), #* roger - reuso da app para login
     path('questions/', include('questions.urls')), #* roger - insere tratamento do app questions
     path('', TemplateView.as_view(template_name='home.html'), name='home'), #* roger - Carga da home page
-]
+] # modo simplesw remove isso + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
