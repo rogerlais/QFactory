@@ -22,9 +22,14 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include # new
 
+app_name = "questions"
+
 # todo inserir as urls a serem tratadas aqui
 urlpatterns = [
-    path('questions/', views.index, name='index'),  # Resolve pelo metodo index de questions.apps
+    #path('questions/', views.index, name='index'),  # Resolve pelo metodo index de questions.apps
+
+    path('questions/', views.QuestionsListView.as_view(), name='questions'),
+    path('questions/qid/<int:pk_from_url>', views.QuestionDetailView.as_view(), name='qid'),
     #path('', views.login, name='login'),  # !Resolve pelo metodo index de questions.apps
     #url(r'^login/$', LoginView.as_view(template_name='admin/login.html',extra_context={'login': 'QFactory Login Header', })),
 ]
