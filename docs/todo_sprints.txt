@@ -2,6 +2,8 @@
 - class model professor - coordinator heritance 
 - view /questions 
 - sub-view mwnu entrance
+- coletar exemplos de https://github.com/csev/dj4e-samples
+
 
 [leo]
 - template base
@@ -9,3 +11,4 @@
 - frame up
 - frame left menu
 - template /questions
+- colocar <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/> abaixo do title das páginas

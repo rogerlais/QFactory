@@ -6,6 +6,7 @@ from django.core.validators import MaxLengthValidator
 
 import datetime
 
+import uuid
 
 # Create your models here.
 class Matter(models.Model):
@@ -20,6 +21,7 @@ class Question(models.Model):
                                      help_text="As questões são limitadas a 1024 caracteres")
     pub_date = models.DateTimeField(verbose_name='Publicado em', auto_now=False,
                                     null=False, help_text="Data de edição da questão")
+
 
 
 class Choice(models.Model):
