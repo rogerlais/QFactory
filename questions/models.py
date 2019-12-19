@@ -16,12 +16,14 @@ class Matter(models.Model):
 
 
 class Question(models.Model):
-    question_text = models.CharField(max_length=1024, validators=[MaxLengthValidator(250)], verbose_name="Enunciado",
+    question_text = models.CharField(max_length=1024, validators=[MaxLengthValidator(1023)], verbose_name="Enunciado",
                                      default="Digite aqui o texto da questão",
                                      help_text="As questões são limitadas a 1024 caracteres")
     pub_date = models.DateTimeField(verbose_name='Publicado em', auto_now=False,
                                     null=False, help_text="Data de edição da questão")
-
+    title = models.CharField( max_length = 120 ,validators=[MaxLengthValidator(119)], verbose_name="Título questão",
+                                     default="Digite título da questão",
+                                     help_text="As questões são limitadas a 120 caracteres")
 
 
 class Choice(models.Model):
