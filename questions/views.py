@@ -6,19 +6,19 @@ from .models import Question
 
 # Create your views here.
 
-class QuestionsListView(View):
+class QuestionsListView(View):  #/questions/questions
     def get(self, request) :
         stuff = Question.objects.all()
         cntx = { 'qst_list': stuff }
         #cntx  = { "qst" : Question.objects.order_by('-pub_date')[:5] }
         return render( request, 'questions/roger_question_list.html', cntx )
 
-class QuestionsRootView(View):
+class QuestionsRootView(View): #/questions/
     def get(self, request) :
         return render( request, 'home.html' )
 
 
-class QuestionDetailView(View):
+class QuestionDetailView(View): #/questions/questions/qid/<pk_id>
     def get( self, request ):
         #todo montar contexto e template
         return render( request, 'questions/roger_detail_qid.html' )

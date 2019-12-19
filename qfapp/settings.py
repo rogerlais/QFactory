@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles', 
     'questions.apps.QuestionsConfig', #Aplicação a ser desenvolvida
+    'favicon.conf.FavIconConfig',
 ]
 
 MIDDLEWARE = [

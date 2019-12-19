@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=480, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Teste Roger</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=480, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Teste Roger</title>
 </head>
 
-<!-- inicio do bloco "enchimento de linguica--> 
+<!-- inicio do bloco "enchimento de linguica-->
+
 <body>
-    {% load static %}
-    <h1>Lista de questões</h1>
-    <p>
+  {% load static %}
+  <h1>Lista de questões</h1>
+  <p>
     {% if qst_list %}
-    <ul>
+    <table border="1">
+      <tr>
+        <!--cabecalho da lista de questões-->
+        <th>Id</th>
+        <th>Título questão</th>
+      </tr>
       {% for qst in qst_list %}
-        <li>
-          <a href="{% url 'questions:qid' qst.id %}">{{ qst.question_text }}</a>
-        </li>
+      <tr>
+        <td>
+          <a href="{% url 'questions:qid' qst.id %}">{{ qst.id }}</a>
+        </td>
+        <td>
+          <a href="{% url 'questions:qid' qst.id %}">{{ qst.title }}</a>
+        </td>
+      </tr>
       {% endfor %}
-    </ul>
+    </table>
     {% else %}
-      <p>Banco de dados de questões está vazio.</p>
+    <p>Banco de dados de questões está vazio.</p>
     {% endif %}
-    </p>
+  </p>
 </body>
-<!-- final do bloco "enchimento de linguica--> 
+<!-- final do bloco "enchimento de linguica-->
+
 </html>
