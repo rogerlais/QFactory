@@ -1,13 +1,31 @@
 <!-- templates/home.html-->
 {% extends 'base.html' %}
 
-
 {% block title %}Home{% endblock %}
 
 
 {% block content %}
 
-<div class="container">
+{% if user.is_authenticated %}
+  Olá {{ user.username }}!<br>
+  O que deseja fazer?<br>
+  <opt>
+    <a href="{% url 'logout' %}">Cadastrar questões</a><br>
+    <a href="http://127.0.0.1:8000/questions/questions/">Minhas questões</a><br>
+    <a href="{% url 'logout' %}">Criar exames</a><br>
+    <a href="{% url 'logout' %}">Exames e gabaritos</a><br>
+    <a href="{% url 'logout' %}">Avaliar questões</a><br>
+  </opt>
+  
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
+
+
+<!--<div class="container">
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">Projeto OO!</h1>
@@ -16,13 +34,7 @@
       <p>Leonardo e Roger</p>
     </div>
   </div>
-</div> 
+</div>
+-->
 
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-{% endif %}
 {% endblock %}

@@ -7,24 +7,126 @@
 
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}QFactory - Trabalho disciplina OOP/DS - Prof. Drª Alana {% endblock %}</title>
+  <title>{% block title %}{% endblock %}</title>
   <!--Usar a linha abaixo como modelo para posteriores  -->
-   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+  <!--<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/> -->
+  <!--<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}"/> -->
+  <style type="text/css">
+      h1{
+        color: black;
+        text-decoration: none;
+        font-size: 12pt;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      h2{
+        color: darkgreen;
+        font-size: 22pt;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+      }
+      h3{
+        font-size: 16pt;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: black;
+      }
+      a{
+        font-size: 13pt;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color:black
+      }
+      b{
+        font-size: 13pt;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: honeydew;
+      }
+      #wrap1{
+        width: 180px;
+        margin: auto;
+      }
+      #wrap2{
+        width: auto;
+        margin: auto;
+        padding-top: 10pt;
+        padding-bottom: 10pt;
+        background-color: rgb(165, 233, 165);
+      }
+      #teste{
+        width: 500px;
+        margin: auto;
+        text-align: justify;
+      }
+      #wrap4{
+        width: 400px;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 50px;
+        text-align: center;
+        color:honeydew;
+        background-color: rgb(76, 112, 126);
+        font-size: 18pt;
+      }
+      #wrap5{
+        width: auto;
+        margin: auto;
+        padding-top: 0px;
+        padding-bottom: 10px;
+        text-align: center;
+        background-color: rgb(26, 109, 26);
+      }
+      img{
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+  </style>
 </head>
 
 <body>
   <main>
-    <p>"Caminho do css == {% static 'css/style.css' %}"</p>
-    <p> Testando... CSS</p>
-    <!--
-    <div class="navbar">
-      <a href="{% url 'home' %}" class="navbar-brand">Home</a>
-      <a href="{% url 'index' %}" class="navbar-item">About</a>
-      <a href="{% url 'index' %}" class="navbar-item">Contact</a>
+    <div id="wrap1">
+      <img src="/static/img/logo_ifpb.png" width="75" alt="Logo da instituição" title="IFPB" ><br>
+      <h1>
+        INSTITUTO FEDERAL<br>
+        Paraíba<br>
+        Campus João Pessoa
+      </h1>
     </div>
-    -->
-    {% block content %}
-    {% endblock %}
+
+    <div id="wrap2">
+      <h2>
+        Projeto - Banco de Questões
+      </h2>
+    </div>
+    <br>
+
+    <div id="teste">
+      <h3>
+        Banco de questões da Alana Universty
+      </h3>
+      <a>
+        O sistema consiste em uma base de armazenamento e administração de questões para serem utilizadas em provas, simulados, testes e demais tipos de avaliações planejadas pelos professores da instituição.
+      </a>
+    </div>
+
+    <br>
+    <div id="wrap4">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <br>
+    
+    <div id="wrap5">
+      <footer>
+        <b>
+          <br>Disciplina: Programação e Estrutura de Dados<br> 
+          Prof.: Drª Alana<br>
+          Alunos: Leonardo e Rogerlais<br>
+        </b>
+        <b><br>all rights reserved</b>
+      </footer>
+    </div>
+    
   </main>
 </body>
 
