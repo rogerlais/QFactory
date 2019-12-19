@@ -19,6 +19,8 @@ from django.views.generic.base import TemplateView
 from django.conf.urls.static import static
 from django.conf import settings
 
+from django.contrib.auth.urls import urlpatterns
+
 '''
 operação de login baseados a partir de: 
 https://wsvincent.com/django-user-authentication-tutorial-login-and-logout/

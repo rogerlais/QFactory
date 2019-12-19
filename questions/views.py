@@ -13,6 +13,11 @@ class QuestionsListView(View):
         #cntx  = { "qst" : Question.objects.order_by('-pub_date')[:5] }
         return render( request, 'questions/roger_question_list.html', cntx )
 
+class QuestionsRootView(View):
+    def get(self, request) :
+        return render( request, 'home.html' )
+
+
 class QuestionDetailView(View):
     def get( self, request ):
         #todo montar contexto e template

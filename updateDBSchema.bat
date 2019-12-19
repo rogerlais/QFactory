@@ -1,10 +1,8 @@
-
-
-call .\DjEnv\Scripts\Actibat.bat
+call .\djenv\Scripts\Activate.bat
 
 python manage.py makemigrations
 
-pause "Deseja efetivar as migrações?(ctrl+c = cancelar)"
+pause "Deseja efetivar as migracoes?(ctrl+c = cancelar)"
 
 python manage.py migrate
 

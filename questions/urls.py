@@ -29,6 +29,7 @@ urlpatterns = [
     #path('questions/', views.index, name='index'),  # Resolve pelo metodo index de questions.apps
 
     path('questions/', views.QuestionsListView.as_view(), name='questions'),
+    path('', views.QuestionsRootView.as_view(), name='home'),
     path('questions/qid/<int:pk_from_url>', views.QuestionDetailView.as_view(), name='qid'),
     #path('', views.login, name='login'),  # !Resolve pelo metodo index de questions.apps
     #url(r'^login/$', LoginView.as_view(template_name='admin/login.html',extra_context={'login': 'QFactory Login Header', })),
