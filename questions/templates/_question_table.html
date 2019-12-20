@@ -1,0 +1,23 @@
+{% autoescape off %}
+{% if qst_list %}
+<table border="1">
+  <tr>
+    <!--cabecalho da lista de questões-->
+    <th>Id</th>
+    <th>Título questão</th>
+  </tr>
+  {% for qst in qst_list %}
+  <tr>
+    <td>
+      <a href="{% url 'questions:qid' qst.id %}">{{ qst.id }}</a>
+    </td>
+    <td>
+      <a href="{% url 'questions:qid' qst.id %}">{{ qst.title }}</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>Banco de dados de questões está vazio.</p>
+{% endif %}
+{% endautoescape %}
