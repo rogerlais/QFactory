@@ -10,9 +10,11 @@
   Olá {{ user.username }}!<br>
   O que deseja fazer?<br>
   <opt>
-    {% autoescape off %}{{ menu }}{% endautoescape %} 
+    <!--
+    {-% autoescape off %}{{ menu }}{% endautoescape %-} 
+    -->
   </opt>
-  
+  <p><a href="{% url 'questions:all' %}">Iniciar a operação</a></p>
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
   <p>You are not logged in</p>

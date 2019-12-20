@@ -63,18 +63,18 @@
       background-color: rgb(226, 231, 226);
     }
 
-    #wrap_super_div{
-      width: 800px;
+    #wrap_super_div {
+      width: 100%;
       height: 200px;
       margin: auto;
     }
 
     #wrap_left_side {
-      width: 120px;
-      height: 200px;
+      width: 180px;
+      height: 240px;
       margin: auto;
-      text-align: center;
-      font-size: 14pt;
+      text-align: left;
+      font-size: 12pt;
       float: left;
       background-color: cadetblue;
     }
@@ -82,12 +82,12 @@
     #wrap_main_area {
       width: 680px;
       margin: auto;
-      float: right;
+      float: center;
       text-align: center;
     }
 
-    #wrap_buttons{
-      width: 800px;
+    #wrap_buttons {
+      width: 100%;
       margin: auto;
       padding-bottom: 10px;
       padding-top: 10px;
@@ -130,30 +130,30 @@
         Projeto - Banco de Questões
       </h2>
     </div>
-    
+
     <div id="wrap_super_div">
-        <div id="wrap_main_area">
-          <nav>
-            <ul>
-                <bold>área cliente principal DEVE centralizar</bold>
-            </ul>
-          </nav>
-        </div>
-        
-        <div id="wrap_left_side">
-          <p>digite o texto aqui...</p>
-        </div>
+
+      <div id="wrap_left_side">
+        {% block menu %}
+        {% autoescape off %}{{ menu }}{% endautoescape %}
+        {% endblock %}
+      </div>
+
+      <div id="wrap_main_area">
+        <nav>
+          {% block content %}
+          {% autoescape off %}{{ main_area }}{% endautoescape %}
+          {% endblock %}
+        </nav>
+      </div>
+
     </div>
 
     <div id="wrap_buttons">
       <nav>
-        <ul>
-          <li><a href="#">Voltar</a></li>
-          <li><a href="#">Salvar</a></li>
-          <li><a href="#">Apagar</a></li>
-          <li><a href="#">Cancelar</a></li>
-          <li><a href="#">Edição</a></li>
-        </ul>
+        {% block operations %}
+        {% autoescape off %}{{ operations }}{% endautoescape %}
+        {% endblock %}
       </nav>
     </div>
 

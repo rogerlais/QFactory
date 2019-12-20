@@ -18,6 +18,16 @@ class Matter(models.Model):
         return self.name
 
 
+class Professor(models.Model):
+    prof_name = models.CharField(max_length=45, validators=[MaxLengthValidator(44)], verbose_name="Nome-Professor",
+                                     default="Professor desconhecido",
+                                     help_text="Digite o nome do professor")
+    matter = models.ForeignKey(Matter, on_delete=models.CASCADE, null = False)
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.prof_name
+
 
 class Question(models.Model):
     question_text = models.CharField(max_length=1024, validators=[MaxLengthValidator(1023)], verbose_name="Enunciado",
@@ -28,6 +38,7 @@ class Question(models.Model):
     title = models.CharField( max_length = 120 ,validators=[MaxLengthValidator(119)], verbose_name="Título questão",
                                      default="Digite título da questão",
                                      help_text="As questões são limitadas a 120 caracteres")
+    parent = models.ForeignKey(Professor, on_delete=models.CASCADE, null=False)
 
     def __str__(self):
         """String for representing the Model object."""
@@ -67,13 +78,3 @@ class Choice(models.Model):
         else:
             ret = '[ ]'
         return ret + self.choice_label
-
-class Professor(models.Model):
-    prof_name = models.CharField(max_length=45, validators=[MaxLengthValidator(44)], verbose_name="Nome-Professor",
-                                     default="Professor desconhecido",
-                                     help_text="Digite o nome do professor")
-    matter = models.ForeignKey(Matter, on_delete=models.CASCADE, null = False)
-
-    def __str__(self):
-        """String for representing the Model object."""
-        return self.prof_name

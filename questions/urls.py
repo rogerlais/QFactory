@@ -29,9 +29,14 @@ urlpatterns = [
     #path('questions/', views.index, name='index'),  # Resolve pelo metodo index de questions.apps
 
     path('questions/', views.QuestionsListView.as_view(), name='questions'),
-    path('', views.QuestionsRootView.as_view(), name='home'),
+    #https://code.djangoproject.com/ticket/29365 explica necessidade da gambiarra abaixo
+    path('', views.QuestionsRootView.as_view(), name='all'),  #roger era all = home
     path('questions/qid/<int:pk_from_url>', views.QuestionDetailView.as_view(), name='qid'),
-    path('questions/create/', views.QuestionCreate.as_view(), name='questions_create'),
+
+    path('questions/create/', views.QuestionCreate.as_view(), name='question_create'),
+    path('questions/<int:pk>/update/', views.QuestionUpdate.as_view(), name='question_update'),
+    path('questions/<int:pk>/delete/', views.QuestionDelete.as_view(), name='question_delete'),
+
     #path('', views.login, name='login'),  # !Resolve pelo metodo index de questions.apps
     #url(r'^login/$', LoginView.as_view(template_name='admin/login.html',extra_context={'login': 'QFactory Login Header', })),
 ]
