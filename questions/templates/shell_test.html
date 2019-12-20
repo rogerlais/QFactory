@@ -1,0 +1,178 @@
+<!-- A linha abaixo DEVE ser carregada antes de QQ referencia posterior -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% endblock %}</title>
+  <!--Usar a linha abaixo como modelo para posteriores  -->
+  <!--<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/> -->
+
+  <style type="text/css">
+    h1 {
+      color: black;
+      text-decoration: none;
+      font-size: 12pt;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    h2 {
+      color: darkgreen;
+      font-size: 22pt;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      text-align: center;
+    }
+
+    a {
+      color: black;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      text-align: left;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: darkgreen;
+      text-decoration: underline;
+    }
+
+    b {
+      font-size: 13pt;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: honeydew;
+    }
+
+    div nav ul li {
+      list-style: none;
+      display: inline-block;
+    }
+
+    div nav ul li a {
+      color: black;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      text-decoration: none;
+    }
+
+    div nav ul li a:hover {
+      color: darkgreen;
+      text-decoration: underline;
+    }
+
+    #wrap1 {
+      width: 180px;
+      margin: auto;
+    }
+
+    #wrap2 {
+      width: auto;
+      margin: auto;
+      padding-top: 10pt;
+      padding-bottom: 10pt;
+      background-color: rgb(165, 233, 165);
+    }
+
+    #wrep3 {
+      width: auto;
+      margin: left;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      text-align: center;
+      font-size: 14pt;
+    }
+
+    #wrep_main_area {
+      width: auto;
+      margin: auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      text-align: center;
+      font-size: 14pt;
+      align-self: center;
+      background-color: rgb(223, 223, 223);
+    }
+
+    #wrap5 {
+      width: auto;
+      margin: auto;
+      padding-top: 0px;
+      padding-bottom: 10px;
+      text-align: center;
+      background-color: rgb(26, 109, 26);
+    }
+
+    img {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="wrap1">
+      <img src="/static/img/logo_ifpb.png" width="75" alt="Logo da instituição" title="IFPB"><br>
+      <h1>
+        INSTITUTO FEDERAL<br>
+        Paraíba<br>
+        Campus João Pessoa
+      </h1>
+    </div>
+
+    <div id="wrap2">
+      <h2>
+        Projeto - Banco de Questões
+      </h2>
+    </div>
+    <br>
+
+    <a>
+      <input type="submit" value="Voltar" />
+      <!--<a href="#">Voltar</a>-->
+    </a>
+
+    <div id="wrep_main_area">
+      <nav>
+        <ul>
+            {% block content %}
+            {% autoescape off %}{{ main_area }}{% endautoescape %}
+            {% endblock %}
+        </ul>
+      </nav>
+    </div>
+
+    <div id="wrep3">
+      <nav>
+        <ul>
+          <li><input type="submit" value="Salvar" /></li>
+          <li><input type="submit" value="Apagar" /></li>
+          <li><input type="submit" value="Cancelar" /></li>
+          <li><input type="submit" value="Edição" /></li>
+          <!--<li><a href="#">Salvar</a></li>
+          <li><a href="#">Apagar</a></li>
+          <li><a href="#">Cancelar</a></li>
+          <li><a href="#">Edição</a></li>-->
+        </ul>
+      </nav>
+    </div>
+
+
+    <div id="wrap5">
+      <footer>
+        <b>
+          <br>Disciplina: Programação e Estrutura de Dados<br>
+          Prof.: Drª Alana<br>
+          Alunos: Leonardo e Rogerlais<br>
+        </b>
+        <b><br>all rights reserved</b>
+      </footer>
+    </div>
+
+  </main>
+</body>
+
+</html>
