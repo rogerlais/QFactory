@@ -15,7 +15,9 @@ class QuestionsListView(View):  #/questions/questions
 
 class QuestionsRootView(View): #/questions/
     def get(self, request) :
-        return render( request, 'home.html' )
+        s = render( request, 'menu.html')
+        cntx = { 'menu': s.content.decode() }
+        return render( request, 'home.html', cntx )
 
 
 class QuestionDetailView(View): #/questions/questions/qid/<pk_id>

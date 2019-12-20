@@ -1,0 +1,7 @@
+{% autoescape off %}
+<a href="{% url 'logout' %}">Cadastrar questões</a><br> <!-- logout = questions:new_question-->
+<a href="{% url 'questions:questions' %}">Minhas questões</a><br> 
+<a href="{% url 'logout' %}">Criar exames</a><br> <!-- logout = questions:new_exame -->
+<a href="{% url 'logout' %}">Exames e gabaritos</a><br> 
+<a href="/questions">Avaliar questões</a><br>
+{% endautoescape %}

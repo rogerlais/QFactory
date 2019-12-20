@@ -5,7 +5,7 @@ cls
 pause "Deseja continuar?(ctrl-c = cancela)"
 
 cd .\DB
-git push --force
+git pull --force
 if %ERRORLEVEL% neq 0 GOTO :LASCOU
 
 REM pause "Operacao de pull foi realizada?(ctrl-c = cancela copia)"
